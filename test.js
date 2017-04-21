@@ -11,7 +11,7 @@ describe('toCurried', function () {
 
   context('no `argsFn` specified', function () {
     context('arity of converted function === arity of initial function', function () {
-      it('allows arguments to be curried (and reverses their order)', function () {
+      it('allows arguments to be curried', function () {
         var curriedFn = toCurried(fn, 3)
         assert.equal(curriedFn(1)(2)(3), '1 2 3')
       })
@@ -22,7 +22,7 @@ describe('toCurried', function () {
         assert.equal(curriedFn(1)(2, 3), '1 2 3')
       })
 
-      it('allows the function to be called with all arguments in the reversed order', function () {
+      it('allows the function to be called with all arguments', function () {
         var curriedFn = toCurried(fn, 3)
         assert.equal(curriedFn(1, 2, 3), '1 2 3')
       })
