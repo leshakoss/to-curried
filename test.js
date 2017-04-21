@@ -67,6 +67,20 @@ describe('toCurried', function () {
         assert.equal(result, 'undefined undefined undefined')
       })
     })
+
+    context('arity of converted function < 0', function () {
+      it('throws RangeError', function () {
+        var block = toCurried.bind(null, fn, -1)
+        assert.throws(block, RangeError)
+      })
+    })
+
+    context('arity of converted function is NaN', function () {
+      it('throws RangeError', function () {
+        var block = toCurried.bind(null, fn, NaN)
+        assert.throws(block, RangeError)
+      })
+    })
   })
 
   context('`argsFn` is specified', function () {
@@ -130,6 +144,20 @@ describe('toCurried', function () {
         it('returns the constant instead of function', function () {
           var result = toCurried(fn, 0, argsFn)
           assert.equal(result, 'undefined undefined undefined')
+        })
+      })
+
+      context('arity of converted function < 0', function () {
+        it('throws RangeError', function () {
+          var block = toCurried.bind(null, fn, -1, argsFn)
+          assert.throws(block, RangeError)
+        })
+      })
+
+      context('arity of converted function is NaN', function () {
+        it('throws RangeError', function () {
+          var block = toCurried.bind(null, fn, NaN, argsFn)
+          assert.throws(block, RangeError)
         })
       })
     })
