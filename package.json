@@ -1,0 +1,19 @@
+{
+  "name": "to-curried",
+  "version": "0.0.1",
+  "description": "Convert JavaScript function to curried function",
+  "main": "index.js",
+  "author": "Lesha Koss <regiusprod@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leshakoss/to-curried"
+  },
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "mocha": "^3.2.0"
+  }
+}
