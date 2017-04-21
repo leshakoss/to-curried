@@ -1,6 +1,6 @@
 {
   "name": "to-curried",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Convert JavaScript function to curried function",
   "main": "index.js",
   "author": "Lesha Koss <regiusprod@gmail.com>",
