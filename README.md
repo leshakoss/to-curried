@@ -2,7 +2,7 @@
 
 Convert JavaScript function to curried function.
 
-## `toCurried(fn, arity, [argsFn])` ⇒ `function`|`*`
+## `toCurried(fn, arity, [argsFn]) ⇒ Function | *`
 
 Transform the function into [functional programming](https://en.wikipedia.org/wiki/Functional_programming)
 friendly function, like those in [`lodash`](https://github.com/lodash/lodash/wiki/FP-Guide)
@@ -12,20 +12,23 @@ and functional-style [function composing](https://medium.com/making-internets/wh
 
 If `arity` is 0, `toCurried` calls a function immediately and returns its result.
 
-**Returns**: `function`|`*` - the resulted curried function (or the constant if `arity` is 0)
-**Throws**:
+### Returns
 
-- `RangeError` `arity` must be non-negative number
+- `Function | *`: the resulted curried function (or the constant if `arity` is 0)
 
-**Arguments**:
+### Throws
 
-| Param    | Type       | Description                                              |
-|----------|------------|----------------------------------------------------------|
-| fn       | `function` | the function to convert                                  |
-| arity    | `number`   | the number of arguments of the resulted curried function |
-| [argsFn] | `function` | callback that transforms the list of arguments           |
+- `RangeError`: `arity` must be non-negative number
 
-**Example**
+### Arguments
+
+| Param      | Type       | Description                                              |
+|------------|------------|----------------------------------------------------------|
+| `fn`       | `Function` | the function to convert                                  |
+| `arity`    | `Number`   | the number of arguments of the resulted curried function |
+| `[argsFn]` | `Function` | callback that transforms the list of arguments           |
+
+### Example
 ```js
 import toCurried from 'to-curried'
 
@@ -39,7 +42,7 @@ console.log(multiplyEachBy2([1, 2, 3, 4]))
 //=> [2, 4, 6, 8]
 ```
 
-**Example**
+### Example
 ```js
 // Change an order of arguments in curried function with optional callback:
 import toCurried from 'to-curried'
