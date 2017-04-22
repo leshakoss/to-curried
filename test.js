@@ -182,6 +182,21 @@ describe('toCurried', function () {
     })
   })
 
+  context('when transforming functions with context', function () {
+    var fnWithContext = (function (a, b, c) {
+      return 'this a b c'
+        .replace('this', this)
+        .replace('a', a)
+        .replace('b', b)
+        .replace('c', c)
+    }).bind(123)
+
+    it('preserves the original context', function () {
+      var curriedFnWithContext = toCurried(fnWithContext, 3)
+      assert.equal(curriedFnWithContext(4)(5)(6), '123 4 5 6')
+    })
+  })
+
   context('examples from README', function () {
     describe('the first example', function () {
       it('works as expected', function () {
