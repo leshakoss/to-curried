@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/leshakoss/to-curried.svg?branch=master)](https://travis-ci.org/leshakoss/to-curried)
+
 # `to-curried`
 
 Convert JavaScript function to curried function.
